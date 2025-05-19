@@ -1,0 +1,38 @@
+<div class="background w-100 min-h-screen md:pr-[215px]">
+  <h1 class="text-center text-[30px] font-extrabold text-black pt-8">جستجوی بیماران</h1>
+
+  <div
+    style="direction: rtl;"   
+    class="flex flex-wrap justify-center items-center gap-4 mt-7  rtl bg-white rounded-2xl shadow-md px-3 py-6 w-[80%] max-w-[900px] mx-auto
+    md:flex-row md:gap-4
+    sm:flex-col sm:gap-3 sm:px-1 sm:py-4">
+
+    <input
+      type="text"
+      placeholder="مثال: 101"
+      [(ngModel)]="searchId"
+      class="px-4 pr-4 pl-10 py-3 rounded-xl border-none w-full max-w-[280px] bg-[#91FFF1] shadow-md text-[15px] text-[#004D08] outline-none focus:ring-2 focus:ring-[#05978433]"
+    />
+
+    <input
+      type="text"
+      placeholder="مثال: 09100000000"
+      [(ngModel)]="searchPhone"
+      class="px-4 pr-4 pl-10 py-3 rounded-xl border-none w-full max-w-[280px] bg-[#91FFF1] shadow-md text-[15px] text-[#004D08] outline-none focus:ring-2 focus:ring-[#05978433]"
+    />
+
+    <input
+      type="text"
+      placeholder="مثال: محمد محمدی"
+      [(ngModel)]="searchName"
+      class="px-4 pr-4 pl-10 py-3 rounded-xl border-none w-full max-w-[280px] bg-[#91FFF1] shadow-md text-[15px] text-[#004D08] outline-none focus:ring-2 focus:ring-[#05978433]"
+    />
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-y-8 gap-x-6 mt-10 sm:gap-y-5 sm:gap-x-2" style="direction: rtl;">
+    <app-patient-card
+      *ngFor="let patient of filteredPatients"
+      [patient]="patient"
+    ></app-patient-card>
+  </div>
+</div>
