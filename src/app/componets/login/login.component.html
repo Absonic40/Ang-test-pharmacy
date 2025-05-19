@@ -1,0 +1,72 @@
+<div class="flex h-screen items-center justify-center" style="direction: ltr;">
+  <div class="flex-1 from-teal-400 to-teal-600">
+    <img src="assets/Image/leftimage.png" alt="Pharmacy logo" class="w-auto top-0 left-0 fixed h-[100dvb] object-contain left-image" />
+  </div>
+  <div class="flex-1 flex m-7 items-center justify-center bg-white">
+    <div class="flex flex-col items-center justify-center w-[420px] max-w-full p-8 rounded-[2.5rem] shadow-lg bg-gradient-to-r from-teal-500 to-teal-300 my-auto min-h-[500px]">
+      <div class="text-center mb-10">
+        <h1 class="text-4xl font-extrabold text-[#91FFF1] mb-2">خوش آمدید</h1>
+        <h2 class="text-2xl font-normal text-[#91FFF1]">لطفا وارد شوید</h2>
+      </div>
+      <form (ngSubmit)="handleStart($event)" class="w-full flex flex-col gap-6">
+        <div class="flex flex-col items-end gap-2">
+          <label class="text-white text-[15px] font-normal">نام کاربری را وارد کنید</label>
+          <div class="relative w-full">
+            <input 
+              type="text" 
+              class="user-input w-full h-12 rounded-xl pr-12 pl-4 bg-[#059784] border border-[#059784] text-[#91FFF1] placeholder-[#91FFF1] font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-[#91FFF1] transition" 
+              id="userName" 
+              placeholder="نام کاربری"
+              [(ngModel)]="formData.userName"
+              name="userName"
+              required
+            />
+            <i class="fas fa-user-alt input-icon absolute right-4 top-1/2 -translate-y-1/2 text-black text-lg"></i>
+          </div>
+        </div>
+        <div class="flex flex-col items-end gap-2">
+          <label class="text-white text-[15px] font-normal">رمز عبور را وارد کنید</label>
+          <div class="relative w-full">
+            <input 
+              type="password" 
+              class="pass-input w-full h-12 rounded-xl pr-12 pl-4 bg-[#059784] border border-[#059784] text-[#91FFF1] placeholder-[#91FFF1] font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-[#91FFF1] transition" 
+              id="password" 
+              placeholder="رمز عبور"
+              [(ngModel)]="formData.password"
+              name="password"
+              required
+            />
+            <i class="fas fa-lock absolute right-4 top-1/2 -translate-y-1/2 text-black text-lg"></i>
+          </div>
+        </div>
+        <button 
+          class="start-button w-[180px] h-12 rounded-xl mt-8 mx-auto bg-[#91FFF1] text-[#02564b] text-xl font-bold shadow-lg hover:bg-[#7be9d8] transition-all duration-200"
+          [class.animate]="isAnimating"
+          type="submit"
+          [disabled]="isPending"
+        >
+          ورود
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<style>
+  @media (max-width: 900px) {
+    .font-yekan { font-size: 15px; }
+  }
+  @media (max-width: 828px) {
+    .left-image {
+      display: none;
+    }
+    .flex {
+      flex-direction: column;
+    }
+    .flex-1 {
+      width: 100%;
+    }
+  }
+  input::placeholder {
+    text-align: right;
+  }
+</style>
