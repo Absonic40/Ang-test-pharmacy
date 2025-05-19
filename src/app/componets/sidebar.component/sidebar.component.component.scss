@@ -1,0 +1,153 @@
+/* Nav styles adapted from React project */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(101.78deg, #059784 0.01%, #0CF9DA 117.98%);
+}
+
+.nav-container {
+  width: 200px;
+  height: calc(95vh - 40px);
+  background: #91FFF1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  position: fixed;
+  top: 40px;
+  right: 15px;
+  z-index: 10;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-logo > img {
+  width: 80px;
+  height: auto;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-item.active {
+  background-color: #059784;
+  margin-left: 0;
+  padding-left: 15px;
+  border-radius: 16px;
+}
+
+.nav-item.active .nav-text,
+.nav-item.active .nav-icon {
+  color: #91FFF1;
+}
+
+.nav-item.active svg {
+  color: #91FFF1;
+}
+
+.nav-item.active svg path {
+  stroke: #91FFF1;
+  fill: none;
+}
+
+.nav-item.active .nav-home-icon path {
+  fill: #91FFF1 !important;
+  stroke-width: 0.1 !important;
+}
+
+.nav-item.active svg:not(.nav-home-icon) path {
+  stroke: #91FFF1;
+  fill: none;
+}
+
+.nav-text {
+  margin: 0;
+  color: #004D08;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #91FFF1;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    right: 0;
+    top: 0;
+    height: 100vh;
+    border-radius: 0;
+    width: 250px;
+    position: fixed;
+    z-index: 10;
+    background: #91FFF1;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s cubic-bezier(0.4,0,0.2,1);
+  }
+  .nav-container.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .hamburger-btn {
+    display: block;
+  }
+  .nav-overlay.open {
+    display: block;
+  }
+}
