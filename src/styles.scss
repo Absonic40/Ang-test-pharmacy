@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Yekan Bakh FaNum';
+  src: url('assets/fonts/woff2/YekanBakhFaNum-Regular.woff2') format('woff2'),
+       url('assets/fonts/woff/YekanBakhFaNum-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Yekan Bakh FaNum';
+  src: url('assets/fonts/woff2/YekanBakhFaNum-Bold.woff2') format('woff2'),
+       url('assets/fonts/woff/YekanBakhFaNum-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+body, html {
+  font-family: 'Yekan Bakh FaNum', 'Yekan Bakh', 'YekanBakh', 'Yekan-Bakh', 'yekan bakh', 'yekan', 'Tahoma', 'Arial', sans-serif !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.fa-num, .fa-number, [fa-num], .faNum, .fa-num * {
+  font-family: 'Yekan Bakh FaNum', 'Yekan Bakh', 'YekanBakh', 'Yekan-Bakh', 'yekan bakh', 'yekan', 'Tahoma', 'Arial', sans-serif !important;
+  font-variant-numeric: normal;
+  direction: rtl;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    margin-right: 215px; /* 200px width + 15px gap for the sidebar */
+  }
+}
