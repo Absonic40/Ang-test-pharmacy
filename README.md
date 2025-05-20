@@ -1,7 +1,7 @@
 #Login Page
-You can see db.jason file that hav pass and username
+You can see db.jason file that hav pass and username|
 em:
-Username: user1
+Username: user1 |
 Password:pass1
 
 # Cod
